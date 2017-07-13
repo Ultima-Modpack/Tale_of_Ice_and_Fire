@@ -2,6 +2,7 @@ package com.calebrudolph.Tale_of_Ice_and_Fire;
 
 import com.calebrudolph.Tale_of_Ice_and_Fire.proxy.CommonProxy;
 
+import init.ModItems;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -23,14 +24,15 @@ public class Tale_of_Ice_and_Fire {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-		
+		ModItems.init();
+		ModItems.register();
 		
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		
-		
+		proxy.init();
 	}
 	
 	@EventHandler
