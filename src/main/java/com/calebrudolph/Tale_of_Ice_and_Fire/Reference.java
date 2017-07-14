@@ -28,5 +28,23 @@ public class Reference {
 		}
 	}
 	
+	public static enum Tale_of_Ice_and_FireBlocks {
+		RUBYBLOCK("rubyblock","BlockRuby");
+		
+		private String unlocalizedName;
+		private String registryName;
+		
+		Tale_of_Ice_and_FireBlocks(String unlocalizedName,String registryName){
+			this.unlocalizedName = unlocalizedName;
+			this.registryName = registryName;
+		}
+		public String getUnlocalizedName() {
+			return unlocalizedName;
+		}
+		public String getRegistryName() {
+			return registryName;
+		}
+	}
+	
 	
 }
