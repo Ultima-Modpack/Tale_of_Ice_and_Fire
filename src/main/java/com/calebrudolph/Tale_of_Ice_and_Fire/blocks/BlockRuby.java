@@ -10,7 +10,10 @@ public class BlockRuby extends Block {
 	public BlockRuby() {
 		super(Material.IRON);
 		setUnlocalizedName(Reference.Tale_of_Ice_and_FireBlocks.RUBYBLOCK.getUnlocalizedName());
+		System.out.println(Reference.Tale_of_Ice_and_FireBlocks.RUBYBLOCK.getRegistryName());
 		setRegistryName(Reference.Tale_of_Ice_and_FireBlocks.RUBYBLOCK.getRegistryName());
+		setHardness(5.0F);
+		setResistance(100.0F);
 	}
 
 }
