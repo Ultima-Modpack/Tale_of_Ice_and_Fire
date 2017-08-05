@@ -1,5 +1,78 @@
 Changelog:
-Build 2407:
+Build 2426:
+	marvinroesch99: Fix overrides not being read from the server registry snapshot (#4224)
+
+Build 1.11.2-13.20.1.2425:
+	diesieben07: Ignore fortune for anything but seeds in crops (#3959)
+
+Build 1.12-14.21.1.2424:
+	marvinroesch99: Fix some test mods crashing server caused by model loading (#4225)
+
+Build 1.12-14.21.1.2423:
+	diesieben07: Fix FML handshake race condition, fixes #4219 (#4220)
+
+Build 1.10.2-12.18.3.2422:
+	mezz: Prevent player from dying infinitely due to zero max health (MC-119183)
+
+Build 1.11.2-13.20.1.2421:
+	mezz: Prevent player from dying infinitely due to zero max health (MC-119183)
+
+Build 1.12-14.21.1.2420:
+	mezz: Prevent player from dying infinitely due to zero max health (MC-119183)
+
+Build 1.12-14.21.1.2419:
+	malte0811:
+		[1.12] Allow the server to handle item-block interaction if onItemUse
+		doesn not return PASS (#3967)
+
+Build 1.12-14.21.1.2418:
+	Madsthunder: Allow support for custom Shields and Shield disabling weapons.
+
+Build 1.12-14.21.1.2417:
+	diesieben07: Ignore fortune for anything but seeds in crops (#4160)
+	ichttt: Log a warning if a coremod does not follow best practices (#4146)
+	python0429: Make Optional.Interface repeatable (#4138)
+
+Build 1.12-14.21.1.2416:
+	xalcon: Added support for vanilla "nbt strings" in json recipes (#4113)
+
+Build 1.12-14.21.1.2415:
+	LexManos:
+		Fix tripwire statemap not being complete when mappings change. Closes
+		#3924
+
+Build 1.11.2-13.20.1.2414:
+	mezz: Fix unblockable damage being blocked by armor. (#3933)
+
+Build 1.12-14.21.1.2413:
+	LexManos:
+		Fixed invalid erroring case during loading Advancements form mods that
+		don't have advancements.
+
+Build 1.12-14.21.1.2412:
+	LexManos:
+		Fixed issue where rendered held items wouldn't properly update when the
+		reequip animations isnt shown. Closes #4175
+
+Build 1.12-14.21.1.2411:
+	LexManos: Fire recipe registry event after json recipes are loaded.
+	LexManos:
+		Send remap event when data is frozen to notify modders to bake things.
+		Fixes search not working when connecting to vanilla servers.
+
+Build 1.12-14.21.1.2410:
+	bs2609:
+		Clean up uses of deprecated library functions (#4130)
+		Avoid catching and rethrowing runtime exceptions
+		to exceptions instead of the log
+
+Build 1.12-14.21.1.2409:
+	bs2609: Remove unneeded block patches (#4167)
+
+Build 1.12-14.21.1.2408:
+	mezz: Improve javadocs for Mod dependencies (#4168)
+
+Build 1.12-14.21.1.2407:
 	mezz: Fix errors in test mods
 	mezz: Add basic Github issue template
 	mezz: Stop "Binary patch set is missing" error log in dev environment

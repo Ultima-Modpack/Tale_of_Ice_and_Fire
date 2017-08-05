@@ -21,7 +21,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12-14.21.1.2407"
+    version = "1.12-14.21.1.2426"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -74,15 +74,4 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-}
-
-repositories {
-    maven {
-        name = "leviathan"
-        url = "http://maven.leviathan-studio.com/artifactory/leviathan/"
-    }
-}
-
-dependencies {
-   compile 'com.leviathanstudio:CraftStudio:1.0.0.93-mc1.12-alpha:dev'
 }
