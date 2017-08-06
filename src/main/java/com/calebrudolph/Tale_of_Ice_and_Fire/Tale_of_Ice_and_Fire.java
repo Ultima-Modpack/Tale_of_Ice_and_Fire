@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class Tale_of_Ice_and_Fire {
 
 	@Instance
-	public static Tale_of_Ice_and_Fire Instance;
+	public static Tale_of_Ice_and_Fire instance;
 	
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
@@ -31,18 +31,19 @@ public class Tale_of_Ice_and_Fire {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
 		
+		proxy.preInit(event);
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		
-		proxy.init();
+		proxy.init(event);
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
 		
-		
+		proxy.postInit(event);
 	}
 	
 	
