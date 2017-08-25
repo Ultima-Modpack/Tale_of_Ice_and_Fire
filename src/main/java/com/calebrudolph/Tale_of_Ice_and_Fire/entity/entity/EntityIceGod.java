@@ -3,6 +3,7 @@ package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityIronGolem;
@@ -25,9 +26,9 @@ import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 
 
-public class EntityIceGod extends EntityMob {
+public class EntityIceGod extends EntityMob implements IRangedAttackMob {
 
-	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
+	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
 	
     public EntityIceGod(World worldIn) {
         super(worldIn);
@@ -49,7 +50,22 @@ public class EntityIceGod extends EntityMob {
         super.removeTrackingPlayer(player);
         this.bossInfo.removePlayer(player);
     }
+    public void onLivingUpdate() {
+    	this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
+    }
+    
+	@Override
+	public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void setSwingingArms(boolean swingingArms) {
+		// TODO Auto-generated method stub
+		
+	}
+	
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
@@ -59,6 +75,7 @@ public class EntityIceGod extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
     }
+    
 
     @Override
     protected void initEntityAI() {
@@ -91,5 +108,7 @@ public class EntityIceGod extends EntityMob {
             return false;
         }
     }
+
+
     
 }
