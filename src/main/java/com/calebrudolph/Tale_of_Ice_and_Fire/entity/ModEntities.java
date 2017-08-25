@@ -19,12 +19,14 @@ public class ModEntities {
     public static void init() {
         // Every entity in our mod has an ID (local to this mod)
         int id = 1;
-        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID+":ancient_golem"), EntityIceGod.class, "WeirdZombie", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x996600, 0x00ff00);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "IceGod"), EntityIceGod.class, "IceGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x996600, 0x00ff00);
 
         // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically
         // but you can of course still make it spawn manually
         EntityRegistry.addSpawn(EntityIceGod.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.ICE_PLAINS);
 
+        // This is the loot table for our mob
+        //LootTableList.register(EntityWeirdZombie.LOOT);
     }
 
     @SideOnly(Side.CLIENT)
@@ -32,4 +34,3 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityIceGod.class, RenderIceGod.FACTORY);
     }
 }
-    

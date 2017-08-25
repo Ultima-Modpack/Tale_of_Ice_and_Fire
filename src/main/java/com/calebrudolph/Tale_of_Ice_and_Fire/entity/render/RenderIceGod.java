@@ -1,10 +1,5 @@
 package com.calebrudolph.Tale_of_Ice_and_Fire.entity.render;
 
-import javax.annotation.Nonnull;
-
-import com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels.ModelIceGod;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -12,9 +7,14 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
+import javax.annotation.Nonnull;
+
+import com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels.ModelIceGod;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
+
 public class RenderIceGod extends RenderLiving<EntityIceGod> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("modtut:textures/entity/64x64.png");
+    private ResourceLocation mobTexture = new ResourceLocation("ctoiafm:textures/entity/128x128.png");
 
     public static final Factory FACTORY = new Factory();
 

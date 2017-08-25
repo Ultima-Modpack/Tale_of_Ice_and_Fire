@@ -1,21 +1,10 @@
 package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity;
 
-import javax.annotation.Nullable;
-
-import com.calebrudolph.Tale_of_Ice_and_Fire.Reference;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
-import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityPigZombie;
@@ -31,13 +20,26 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 public class EntityIceGod extends EntityMob {
+
+    // We reuse the zombie model which has arms that need to be raised when the zombie is attacking:
+    //private static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.createKey(EntityWeirdZombie.class, DataSerializers.BOOLEAN);
+
+   // public static final ResourceLocation LOOT = new ResourceLocation(ModTut.MODID, "entities/weird_zombie");
 
     public EntityIceGod(World worldIn) {
         super(worldIn);
         setSize(0.6F, 1.95F);
     }
-
+/*
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.getDataManager().register(ARMS_RAISED, Boolean.valueOf(false));
+    }
+*/
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
@@ -47,12 +49,19 @@ public class EntityIceGod extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
     }
+/*
+   public void setArmsRaised(boolean armsRaised) {
+        this.getDataManager().set(ARMS_RAISED, Boolean.valueOf(armsRaised));
+    }
 
-
+    @SideOnly(Side.CLIENT)
+    public boolean isArmsRaised() {
+        return this.getDataManager().get(ARMS_RAISED).booleanValue();
+    }
+*/
     @Override
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -81,7 +90,13 @@ public class EntityIceGod extends EntityMob {
             return false;
         }
     }
-
+    
+    /*
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable() {
+        return LOOT;
+    }
 
     @Override
     protected boolean isValidLightLevel() {
@@ -90,6 +105,7 @@ public class EntityIceGod extends EntityMob {
 
     @Override
     public int getMaxSpawnedInChunk() {
-        return 5;
+        return 5; 
     }
+    */
 }
