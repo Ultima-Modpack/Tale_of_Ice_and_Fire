@@ -1,4 +1,4 @@
-package com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels;
+package com.calebrudolph.Tale_of_Ice_and_Fire.boss.bossmodels;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

@@ -10,6 +10,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -19,27 +20,36 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import javax.annotation.Nullable;
+import net.minecraft.world.BossInfo;
+import net.minecraft.world.BossInfoServer;
+
 
 public class EntityIceGod extends EntityMob {
 
-    // We reuse the zombie model which has arms that need to be raised when the zombie is attacking:
-    //private static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.createKey(EntityWeirdZombie.class, DataSerializers.BOOLEAN);
-
-   // public static final ResourceLocation LOOT = new ResourceLocation(ModTut.MODID, "entities/weird_zombie");
-
+	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
+	
     public EntityIceGod(World worldIn) {
         super(worldIn);
         setSize(0.6F, 1.95F);
     }
-/*
+    
     @Override
-    protected void entityInit() {
-        super.entityInit();
-        this.getDataManager().register(ARMS_RAISED, Boolean.valueOf(false));
+    public boolean isNonBoss() {
+        return false;
     }
-*/
+    
+    public void addTrackingPlayer(EntityPlayerMP player)
+    {
+        super.addTrackingPlayer(player);
+        this.bossInfo.addPlayer(player);
+    }
+    public void removeTrackingPlayer(EntityPlayerMP player)
+    {
+        super.removeTrackingPlayer(player);
+        this.bossInfo.removePlayer(player);
+    }
+
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
@@ -49,16 +59,7 @@ public class EntityIceGod extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
     }
-/*
-   public void setArmsRaised(boolean armsRaised) {
-        this.getDataManager().set(ARMS_RAISED, Boolean.valueOf(armsRaised));
-    }
 
-    @SideOnly(Side.CLIENT)
-    public boolean isArmsRaised() {
-        return this.getDataManager().get(ARMS_RAISED).booleanValue();
-    }
-*/
     @Override
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -91,21 +92,4 @@ public class EntityIceGod extends EntityMob {
         }
     }
     
-    /*
-    @Override
-    @Nullable
-    protected ResourceLocation getLootTable() {
-        return LOOT;
-    }
-
-    @Override
-    protected boolean isValidLightLevel() {
-        return true;
-    }
-
-    @Override
-    public int getMaxSpawnedInChunk() {
-        return 5; 
-    }
-    */
 }
