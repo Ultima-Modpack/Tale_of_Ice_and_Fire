@@ -51,6 +51,7 @@ public class EntityIceGod extends EntityMob implements IRangedAttackMob {
         this.bossInfo.removePlayer(player);
     }
     public void onLivingUpdate() {
+    	super.onLivingUpdate();
     	this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
     }
     
