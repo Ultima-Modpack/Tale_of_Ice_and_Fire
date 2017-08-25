@@ -83,18 +83,13 @@ public class ModelIceGod extends ModelBase {
         RightLeg.rotateAngleX = (float)Math.toRadians(speed*180f*(float) Math.sin(Math.toRadians(ageInTicks/2 % 360)*24F));
         LeftLeg.rotateAngleX = -(float)Math.toRadians(speed*180f*(float) Math.sin(Math.toRadians(ageInTicks/2 % 360)*24F));
         LeftArm.rotateAngleX = (float)Math.toRadians(speed*180f*(float) Math.sin(Math.toRadians(ageInTicks/2 % 360)*24F));
-        RightArm.rotateAngleX = -(float)Math.toRadians(speed*180f*(float) Math.sin(Math.toRadians(ageInTicks/2 % 360)*24F));
+        RightArm.rotateAngleX = -(float)Math.toRadians(speed*180f*(float) Math.sin(Math.toRadians(ageInTicks/2 % 360)*20F) + 84F);
         LeftLeg.render(scale);
         RightLeg.render(scale);
         LeftArm.render(scale);
         RightArm.render(scale);
         Body.render(scale);
         Head.render(scale);
-        //Staff.render(scale);
-        //Base1.render(scale);
-        //Base2.render(scale);
-        //Orb.render(scale);
-        //OrbTop.render(scale);
         GlStateManager.popMatrix();
     }
 
