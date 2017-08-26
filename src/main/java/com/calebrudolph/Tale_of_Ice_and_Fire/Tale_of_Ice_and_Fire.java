@@ -1,5 +1,6 @@
 package com.calebrudolph.Tale_of_Ice_and_Fire;
 
+import com.calebrudolph.Tale_of_Ice_and_Fire.commands.TeleportCommand;
 import com.calebrudolph.Tale_of_Ice_and_Fire.proxy.CommonProxy;
 
 import net.minecraft.inventory.InventoryCrafting;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -45,6 +47,12 @@ public class Tale_of_Ice_and_Fire {
 		
 		proxy.postInit(event);
 	}
+	
+    @Mod.EventHandler
+    public void serverLoad(FMLServerStartingEvent event) {
+        event.registerServerCommand(new TeleportCommand());
+    }
+
 	
 	
 	

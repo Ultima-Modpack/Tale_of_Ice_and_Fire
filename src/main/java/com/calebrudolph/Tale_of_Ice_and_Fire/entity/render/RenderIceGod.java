@@ -9,7 +9,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nonnull;
 
-import com.calebrudolph.Tale_of_Ice_and_Fire.boss.bossmodels.ModelIceGod;
+import com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels.ModelIceGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
 
 public class RenderIceGod extends RenderLiving<EntityIceGod> {
