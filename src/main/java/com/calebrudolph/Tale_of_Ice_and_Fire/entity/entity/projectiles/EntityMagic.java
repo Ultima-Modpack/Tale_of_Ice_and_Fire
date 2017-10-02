@@ -1,4 +1,4 @@
-package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity;
+package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

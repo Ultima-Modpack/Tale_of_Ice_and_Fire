@@ -2,9 +2,12 @@ package com.calebrudolph.Tale_of_Ice_and_Fire.entity;
 
 import com.calebrudolph.Tale_of_Ice_and_Fire.Reference;
 import com.calebrudolph.Tale_of_Ice_and_Fire.Tale_of_Ice_and_Fire;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityFireGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceMagic;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityMagic;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireMagic;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityIceMagic;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityMagic;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderFireGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderIceGod;
 
 import net.minecraft.entity.EnumCreatureType;
@@ -21,15 +24,15 @@ public class ModEntities {
     public static void init() {
         // Every entity in our mod has an ID (local to this mod)
         int id = 1;
-        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "IceGod"), EntityIceGod.class, "IceGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x996600, 0x00ff00);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "IceGod"), EntityIceGod.class, "IceGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x3E9696, 0x417F7F);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "FireGod"), EntityFireGod.class, "FireGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x3E9696, 0x417F7F);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityIceMagic.class, "IceMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
-        // We want our mob to spawn in Plains and ice plains biomes. If you don't add this then it will not spawn automatically
-        // but you can of course still make it spawn manually
-        EntityRegistry.addSpawn(EntityIceGod.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.ICE_PLAINS);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityFireMagic.class, "FireMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
     }
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         RenderingRegistry.registerEntityRenderingHandler(EntityIceGod.class, RenderIceGod.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFireGod.class, RenderFireGod.FACTORY);
     }
 }

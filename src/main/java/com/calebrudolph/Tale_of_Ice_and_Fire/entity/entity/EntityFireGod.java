@@ -35,11 +35,11 @@ import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 
 
-public class EntityIceGod extends EntityMob{
+public class EntityFireGod extends EntityMob{
 
 	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS)).setDarkenSky(false);
 	
-    public EntityIceGod(World worldIn) {
+    public EntityFireGod(World worldIn) {
         super(worldIn);
         setSize(0.6F, 1.95F);
     }
@@ -78,7 +78,7 @@ public class EntityIceGod extends EntityMob{
     @Override
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(4, new EntityIceGod.AIFireballAttack(this));
+        this.tasks.addTask(4, new EntityFireGod.AIFireballAttack(this));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.applyEntityAI();
@@ -96,13 +96,13 @@ public class EntityIceGod extends EntityMob{
 
     static class AIFireballAttack extends EntityAIBase
     {
-        private final EntityIceGod iceGod;
+        private final EntityFireGod fireGod;
         private int attackStep;
         private int attackTime;
 
-        public AIFireballAttack(EntityIceGod blazeIn)
+        public AIFireballAttack(EntityFireGod blazeIn)
         {
-            this.iceGod = blazeIn;
+            this.fireGod = blazeIn;
             this.setMutexBits(3);
         }
 
@@ -111,7 +111,7 @@ public class EntityIceGod extends EntityMob{
          */
         public boolean shouldExecute()
         {
-            EntityLivingBase entitylivingbase = this.iceGod.getAttackTarget();
+            EntityLivingBase entitylivingbase = this.fireGod.getAttackTarget();
             return entitylivingbase != null && entitylivingbase.isEntityAlive();
         }
 
@@ -137,17 +137,17 @@ public class EntityIceGod extends EntityMob{
         public void updateTask()
         {
             --this.attackTime;
-            EntityLivingBase entitylivingbase = this.iceGod.getAttackTarget();
-            float d0 = this.iceGod.getDistanceToEntity(entitylivingbase);
+            EntityLivingBase entitylivingbase = this.fireGod.getAttackTarget();
+            float d0 = this.fireGod.getDistanceToEntity(entitylivingbase);
 
             if (d0 < 10.0f)
             {
-            	this.iceGod.getNavigator().clearPathEntity();
-                this.iceGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 0.25D);
+            	this.fireGod.getNavigator().clearPathEntity();
+                this.fireGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 0.25D);
                 
-                double d1 = entitylivingbase.posX - this.iceGod.posX;
-                double d2 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (this.iceGod.posY + (double)(this.iceGod.height / 2.0F));
-                double d3 = entitylivingbase.posZ - this.iceGod.posZ;
+                double d1 = entitylivingbase.posX - this.fireGod.posX;
+                double d2 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (this.fireGod.posY + (double)(this.fireGod.height / 2.0F));
+                double d3 = entitylivingbase.posZ - this.fireGod.posZ;
 
                 if (this.attackTime <= 0)
                 {
@@ -170,24 +170,24 @@ public class EntityIceGod extends EntityMob{
                     if (this.attackStep > 1)
                     {
                         float f = MathHelper.sqrt(MathHelper.sqrt(d0)) * 0.5F;
-                        this.iceGod.world.playEvent((EntityPlayer)null, 1018, new BlockPos((int)this.iceGod.posX, (int)this.iceGod.posY, (int)this.iceGod.posZ), 0);
+                        this.fireGod.world.playEvent((EntityPlayer)null, 1018, new BlockPos((int)this.fireGod.posX, (int)this.fireGod.posY, (int)this.fireGod.posZ), 0);
 
                         for (int i = 0; i < 1; ++i)
                         {
-                            EntityIceMagic entitysmallmagic = new EntityIceMagic(this.iceGod.world, this.iceGod, d1, d2, d3);
-                            entitysmallmagic.posY = this.iceGod.posY + (double)(this.iceGod.height / 2.0F) + 0.5D;
-                            this.iceGod.world.spawnEntity(entitysmallmagic);
+                            EntityFireMagic entitysmallmagic = new EntityFireMagic(this.fireGod.world, this.fireGod, d1, d2, d3);
+                            entitysmallmagic.posY = this.fireGod.posY + (double)(this.fireGod.height / 2.0F) + 0.5D;
+                            this.fireGod.world.spawnEntity(entitysmallmagic);
                         }
                         attackStep =0;
                     }
                 }
 
-                this.iceGod.getLookHelper().setLookPositionWithEntity(entitylivingbase, 10.0F, 10.0F);
+                this.fireGod.getLookHelper().setLookPositionWithEntity(entitylivingbase, 10.0F, 10.0F);
             }
             else
             {
-                this.iceGod.getNavigator().clearPathEntity();
-                this.iceGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 1.5D);
+                this.fireGod.getNavigator().clearPathEntity();
+                this.fireGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 1.5D);
             }
 
             super.updateTask();
@@ -195,7 +195,7 @@ public class EntityIceGod extends EntityMob{
 
         private double getFollowDistance()
         {
-            IAttributeInstance iattributeinstance = this.iceGod.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE);
+            IAttributeInstance iattributeinstance = this.fireGod.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE);
             return iattributeinstance == null ? 16.0D : iattributeinstance.getAttributeValue();
         }
     }

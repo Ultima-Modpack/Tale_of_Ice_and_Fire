@@ -2,13 +2,13 @@
 {
   "modid": "ctoiafm",
   "name": "Tale of Ice and Fire",
-  "description": "Example placeholder",
+  "description": "Custom Bosses",
   "version": "1.0",
   "mcversion": "1.12",
   "url": "",
   "updateUrl": "",
   "authorList": ["calebrudolph"],
-  "credits": "Mewr11 for being useless :)",
+  "credits": "Mewr11 for being almost useless :)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

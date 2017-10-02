@@ -1,4 +1,4 @@
-package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity;
+package com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -11,21 +11,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityIceMagic extends EntityMagic
+public class EntityFireMagic extends EntityMagic
 {
-    public EntityIceMagic(World worldIn)
+    public EntityFireMagic(World worldIn)
     {
         super(worldIn);
         this.setSize(0.3125F, 0.3125F);
     }
 
-    public EntityIceMagic(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ)
+    public EntityFireMagic(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ)
     {
         super(worldIn, shooter, accelX, accelY, accelZ);
         this.setSize(0.3125F, 0.3125F);
     }
 
-    public EntityIceMagic(World worldIn, double x, double y, double z, double accelX, double accelY, double accelZ)
+    public EntityFireMagic(World worldIn, double x, double y, double z, double accelX, double accelY, double accelZ)
     {
         super(worldIn, x, y, z, accelX, accelY, accelZ);
         this.setSize(0.3125F, 0.3125F);
@@ -45,8 +45,7 @@ public class EntityIceMagic extends EntityMagic
         {
             if (result.entityHit != null)
             {
-            	result.entityHit.attackEntityFrom(DamageSource.MAGIC, 2f);
-            	((EntityLivingBase) result.entityHit).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 40));
+            	result.entityHit.setFire(2);
             }
             else
             {
