@@ -143,7 +143,7 @@ public class EntityFireGod extends EntityMob{
             if (d0 < 10.0f)
             {
             	this.fireGod.getNavigator().clearPathEntity();
-                this.fireGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 0.25D);
+                this.fireGod.getMoveHelper().setMoveTo(entitylivingbase.posX, entitylivingbase.posY, entitylivingbase.posZ, 0.2D);
                 
                 double d1 = entitylivingbase.posX - this.fireGod.posX;
                 double d2 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (this.fireGod.posY + (double)(this.fireGod.height / 2.0F));
