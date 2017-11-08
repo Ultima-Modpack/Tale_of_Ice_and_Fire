@@ -25,7 +25,7 @@ public class ModEntities {
         // Every entity in our mod has an ID (local to this mod)
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "IceGod"), EntityIceGod.class, "IceGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x3E9696, 0x417F7F);
-        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "FireGod"), EntityFireGod.class, "FireGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0x3E9696, 0x417F7F);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "FireGod"), EntityFireGod.class, "FireGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0xaa8822, 0x551100);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityIceMagic.class, "IceMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityFireMagic.class, "FireMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
     }
