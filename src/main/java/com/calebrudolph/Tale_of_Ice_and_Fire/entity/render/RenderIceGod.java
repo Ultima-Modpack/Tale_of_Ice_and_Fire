@@ -14,7 +14,7 @@ import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
 
 public class RenderIceGod extends RenderLiving<EntityIceGod> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("ctoiafm:textures/entity/128x128.png");
+    private ResourceLocation mobTexture = new ResourceLocation("ctoiafm:textures/entity/ig_texture.png");
 
     public static final Factory FACTORY = new Factory();
 
