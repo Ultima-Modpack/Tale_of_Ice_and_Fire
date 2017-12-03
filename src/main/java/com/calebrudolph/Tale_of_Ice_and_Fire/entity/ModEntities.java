@@ -4,7 +4,9 @@ import com.calebrudolph.Tale_of_Ice_and_Fire.Reference;
 import com.calebrudolph.Tale_of_Ice_and_Fire.Tale_of_Ice_and_Fire;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityFireGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireArrow;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireMagic;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityIceArrow;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityIceMagic;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityMagic;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderFireGod;
@@ -28,6 +30,8 @@ public class ModEntities {
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "FireGod"), EntityFireGod.class, "FireGod", id++, Tale_of_Ice_and_Fire.instance, 64, 3, true, 0xaa8822, 0x551100);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityIceMagic.class, "IceMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Magic"), EntityFireMagic.class, "FireMagic", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Arrow"), EntityFireArrow.class, "FireArrow", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "Arrow"), EntityIceArrow.class, "FireArrow", id++, Tale_of_Ice_and_Fire.instance, 64, 10, true);
     }
 
     @SideOnly(Side.CLIENT)

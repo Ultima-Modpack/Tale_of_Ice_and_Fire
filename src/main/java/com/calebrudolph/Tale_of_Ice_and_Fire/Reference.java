@@ -11,6 +11,12 @@ public class Reference {
 	public static final String CLIENT_PROXY_CLASS ="com.calebrudolph.Tale_of_Ice_and_Fire.proxy.ClientProxy";
 	public static final String SERVER_PROXY_CLASS ="com.calebrudolph.Tale_of_Ice_and_Fire.proxy.ServerProxy";
 	
+	/*/////////////
+	Boss Fight #1//
+	*//////////////
+	public static final double fireDamage = 1.0D;
+	public static final double iceDamage = 1.0D;
+	
 	public static enum Tale_of_Ice_and_FireItems {
 		OBSIDIANINGOT("obsidianingot", "ItemObsidianingot");
 		

@@ -1,5 +1,6 @@
 package com.calebrudolph.Tale_of_Ice_and_Fire.dimensions;
 
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.old.EntityIceGod;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.EnumCreatureType;
@@ -13,7 +14,6 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
 
 import javax.annotation.Nullable;
 import java.util.List;
