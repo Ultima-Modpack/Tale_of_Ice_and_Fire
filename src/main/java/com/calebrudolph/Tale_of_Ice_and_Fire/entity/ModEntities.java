@@ -6,9 +6,12 @@ import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityFireGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireArrow;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityIceArrow;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderFireArrow;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderFireGod;
+import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderIceArrow;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.render.RenderIceGod;
 
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
@@ -33,5 +36,7 @@ public class ModEntities {
     public static void initModels() {
         RenderingRegistry.registerEntityRenderingHandler(EntityIceGod.class, RenderIceGod.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityFireGod.class, RenderFireGod.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityIceArrow.class, RenderIceArrow.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFireArrow.class, RenderFireArrow.FACTORY);
     }
 }
