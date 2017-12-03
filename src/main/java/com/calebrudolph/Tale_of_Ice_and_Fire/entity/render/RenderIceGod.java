@@ -10,19 +10,20 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import javax.annotation.Nonnull;
 
 import com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels.ModelFireGod;
+import com.calebrudolph.Tale_of_Ice_and_Fire.bossmodels.ModelIceGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityFireGod;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.EntityIceGod;
 
 public class RenderIceGod extends RenderLiving<EntityIceGod> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("ctoiafm:textures/entity/fg_texture.png");
+    private ResourceLocation mobTexture = new ResourceLocation("ctoiafm:textures/entity/ig_texture.png");
 
     public static final Factory FACTORY = new Factory();
 
     public RenderIceGod(RenderManager rendermanagerIn) {
         // We use the vanilla zombie model here and we simply
         // retexture it. Of course you can make your own model
-        super(rendermanagerIn, new ModelFireGod(), 0.5F);
+        super(rendermanagerIn, new ModelIceGod(), 0.5F);
     }
 
     @Override

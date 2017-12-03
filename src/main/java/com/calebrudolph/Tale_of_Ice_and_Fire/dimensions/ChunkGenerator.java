@@ -1,6 +1,5 @@
 package com.calebrudolph.Tale_of_Ice_and_Fire.dimensions;
 
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.old.EntityIceGod;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.EnumCreatureType;
@@ -27,7 +26,7 @@ public class ChunkGenerator implements IChunkGenerator {
     private Random random;
     private Biome[] biomesForGeneration;
     
-    private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityIceGod.class, 100, 2, 2));
+    //private List<Biome.SpawnListEntry> mobs = Lists.newArrayList(new Biome.SpawnListEntry(EntityIceGod.class, 100, 2, 2));
 
     private MapGenBase caveGenerator = new MapGenCaves();
     private NormalTerrainGenerator terraingen = new NormalTerrainGenerator();

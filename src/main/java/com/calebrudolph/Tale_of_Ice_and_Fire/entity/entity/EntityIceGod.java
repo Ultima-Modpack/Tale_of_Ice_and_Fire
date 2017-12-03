@@ -56,8 +56,7 @@ import javax.annotation.Nullable;
 
 import com.calebrudolph.Tale_of_Ice_and_Fire.Reference;
 import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireArrow;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityFireMagic;
-import com.calebrudolph.Tale_of_Ice_and_Fire.entity.entity.projectiles.EntityIceMagic;
+
 
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
